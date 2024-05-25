@@ -19,11 +19,11 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
-    '/appointment/AppointmentView': RouteRecordInfo<'/appointment/AppointmentView', '/appointment/AppointmentView', Record<never, never>, Record<never, never>>,
-    '/center/PersonalCenter': RouteRecordInfo<'/center/PersonalCenter', '/center/PersonalCenter', Record<never, never>, Record<never, never>>,
-    '/class/MyClass': RouteRecordInfo<'/class/MyClass', '/class/MyClass', Record<never, never>, Record<never, never>>,
-    '/laboratory/LaboratoryView': RouteRecordInfo<'/laboratory/LaboratoryView', '/laboratory/LaboratoryView', Record<never, never>, Record<never, never>>,
     '/login/LoginView': RouteRecordInfo<'/login/LoginView', '/login/LoginView', Record<never, never>, Record<never, never>>,
     '/main': RouteRecordInfo<'/main', '/main', Record<never, never>, Record<never, never>>,
+    '/main/appointment/AppointmentView': RouteRecordInfo<'/main/appointment/AppointmentView', '/main/appointment/AppointmentView', Record<never, never>, Record<never, never>>,
+    '/main/center/PersonalCenter': RouteRecordInfo<'/main/center/PersonalCenter', '/main/center/PersonalCenter', Record<never, never>, Record<never, never>>,
+    '/main/class/MyClass': RouteRecordInfo<'/main/class/MyClass', '/main/class/MyClass', Record<never, never>, Record<never, never>>,
+    '/main/laboratory/LaboratoryView': RouteRecordInfo<'/main/laboratory/LaboratoryView', '/main/laboratory/LaboratoryView', Record<never, never>, Record<never, never>>,
   }
 }
