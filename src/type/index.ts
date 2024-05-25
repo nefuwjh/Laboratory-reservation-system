@@ -12,14 +12,18 @@ export interface User {
 export interface Course {
   name?: string
   teacher?: string
+  period?: number
   time?: Array<Time>
 }
 export interface Time {
   week?: string
   day?: string
   section?: string
-  laboratory?: Laboratory
+  laboratory?: string
 }
 export interface Laboratory {
   name?: string
+  week?: string
+  day?: string
+  section?: string
 }
