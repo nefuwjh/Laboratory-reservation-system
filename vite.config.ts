@@ -22,6 +22,7 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()]
     })
   ],
+  base: './', // 相对路径打包
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
