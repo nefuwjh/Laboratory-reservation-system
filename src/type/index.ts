@@ -1,49 +1,25 @@
-export interface PredictioInfo {
-  spid?: string
-  id?: string
-  sequence?: string
-  time?: string
-  count?: number
-  desc?: string
-  status?: number
-}
-
-export interface PredictionBed {
-  spid?: string
-  id?: string
-  sequence?: string
-  count?: number
-  desc?: string
-  status?: number
-  part?: string
-  name?: string
-}
-
 export interface User {
-  id?: string
+  id?: number
+  name?: string
   account?: string
   password?: string
+  office?: string
+  birth?: string
+  title?: string
+  number?: string
+  course?: Array<Course>
 }
-
-export interface ResultVO<T> {
-  code: number
-  message?: string
-  data: T
+export interface Course {
+  name?: string
+  teacher?: string
+  time?: Array<Time>
 }
-
-export type Xiaomai = {
-  Chr: string
-  Start: number
-  End: number
-  Length: number
-  Prob: number
-  result: string
+export interface Time {
+  week?: string
+  day?: string
+  section?: string
+  laboratory?: Laboratory
 }
-
-export interface AddMessage {
-  plantId?: string
-  tissue?: string
-  description?: string
-  chrNum?: string
-  bedString?: string
+export interface Laboratory {
+  name?: string
 }

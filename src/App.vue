@@ -12,6 +12,9 @@
 </template>
 
 <style>
+* {
+  font-size: large;
+}
 .my-row {
   margin: 5px 5px 10px 5px;
   border-radius: 5px;
