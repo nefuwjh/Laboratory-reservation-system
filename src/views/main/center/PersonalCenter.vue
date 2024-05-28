@@ -4,17 +4,6 @@ import { Iphone, Location, OfficeBuilding, Tickets, User } from '@element-plus/i
 import type { ComponentSize } from 'element-plus'
 
 const size = ref<ComponentSize>('default')
-
-const iconStyle = computed(() => {
-  const marginMap = {
-    large: '8px',
-    default: '6px',
-    small: '4px'
-  }
-  return {
-    marginRight: marginMap[size.value] || marginMap.default
-  }
-})
 </script>
 <template>
   <div>
@@ -25,7 +14,7 @@ const iconStyle = computed(() => {
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
-            <el-icon :style="iconStyle">
+            <el-icon >
               <user />
             </el-icon>
             Username
@@ -36,7 +25,7 @@ const iconStyle = computed(() => {
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
-            <el-icon :style="iconStyle">
+            <el-icon>
               <iphone />
             </el-icon>
             Telephone
@@ -47,7 +36,7 @@ const iconStyle = computed(() => {
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
-            <el-icon :style="iconStyle">
+            <el-icon>
               <location />
             </el-icon>
             Place
@@ -58,7 +47,7 @@ const iconStyle = computed(() => {
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
-            <el-icon :style="iconStyle">
+            <el-icon>
               <tickets />
             </el-icon>
             Remarks
@@ -69,7 +58,7 @@ const iconStyle = computed(() => {
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
-            <el-icon :style="iconStyle">
+            <el-icon>
               <office-building />
             </el-icon>
             Address

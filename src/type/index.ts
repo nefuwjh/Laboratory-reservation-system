@@ -22,8 +22,9 @@ export interface Time {
   laboratory?: string
 }
 export interface Laboratory {
-  name?: string
-  week?: string
-  day?: string
-  section?: string
+  name?: string //实验课名
+  week?: string //周次
+  day?: string //星期
+  section?: string //节
+  class?: string //教室
 }
