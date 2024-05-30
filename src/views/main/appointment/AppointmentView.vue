@@ -1,44 +1,72 @@
 <script lang="ts" setup>
+import { addService } from '@/serivice'
 import { reactive } from 'vue'
 
 // do not use same name with ref
 const form = reactive({
   name: '',
-  region: '',
-  date1: '',
-  date2: '',
-  delivery: false,
-  type: [],
-  resource: '',
-  desc: ''
+  teacherName: '',
+  week: '',
+  day: '',
+  section: ''
 })
 
 const onSubmit = () => {
-  console.log('submit!')
+  addService(form)
+  console.log(1, form)
 }
 </script>
 
 <template>
   <el-form :model="form" label-width="auto" style="max-width: 600px">
     <el-form-item label="教师姓名">
-      <el-input v-model="form.name" />
+      <el-input v-model="form.teacherName" />
     </el-form-item>
     <el-form-item label="实验课程名">
-      <el-select v-model="form.region" placeholder="请选择你的实验课">
-        <el-option label="Zone one" value="shanghai" />
-        <el-option label="Zone two" value="beijing" />
+      <el-select v-model="form.name" placeholder="请选择你的实验课">
+        <el-option label="数据结构" value="数据结构" />
+        <el-option label="软件工程" value="软件工程" />
       </el-select>
     </el-form-item>
     <el-form-item label="预约周次">
-      <el-select v-model="form.region" placeholder="请选择你想预约的周次">
-        <el-option label="Zone one" value="shanghai" />
-        <el-option label="Zone two" value="beijing" />
+      <el-select v-model="form.week" placeholder="请选择你想预约的周次">
+        <el-option label="第一周" value="1" />
+        <el-option label="第二周" value="2" />
+        <el-option label="第三周" value="3" />
+        <el-option label="第四周" value="4" />
+        <el-option label="第五周" value="5" />
+        <el-option label="第六周" value="6" />
+        <el-option label="第七周" value="7" />
+        <el-option label="第八周" value="8" />
+        <el-option label="第九周" value="9" />
+        <el-option label="第十周" value="10" />
+        <el-option label="第十一周" value="11" />
+        <el-option label="第十二周" value="12" />
+        <el-option label="第十三周" value="13" />
+        <el-option label="第十四周" value="14" />
+        <el-option label="第十五周" value="15" />
+        <el-option label="第十六周" value="16" />
+        <el-option label="第十七周" value="17" />
+        <el-option label="第十八周" value="18" />
+      </el-select>
+    </el-form-item>
+    <el-form-item label="星期">
+      <el-select v-model="form.day" placeholder="请选择你想预约的星期">
+        <el-option label="星期一" value="1" />
+        <el-option label="星期二" value="2" />
+        <el-option label="星期三" value="3" />
+        <el-option label="星期四" value="4" />
+        <el-option label="星期五" value="5" />
+        <el-option label="星期六" value="6" />
+        <el-option label="星期日" value="7" />
       </el-select>
     </el-form-item>
     <el-form-item label="时间段">
-      <el-select v-model="form.region" placeholder="请选择你想预约的时间段">
-        <el-option label="Zone one" value="shanghai" />
-        <el-option label="Zone two" value="beijing" />
+      <el-select v-model="form.section" placeholder="请选择你想预约的时间段">
+        <el-option label="12节" value="0" />
+        <el-option label="34节" value="1" />
+        <el-option label="56节" value="2" />
+        <el-option label="78节" value="3" />
       </el-select>
     </el-form-item>
     <el-form-item>

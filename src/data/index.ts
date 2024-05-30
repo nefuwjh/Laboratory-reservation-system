@@ -20,11 +20,11 @@ const Course: Course[] = [
 ]
 
 export const laboratorys: Laboratory[] = [
-  { name: '数据结构', week: '1', day: '1', section: '0' },
-  { name: '数据结构', week: '1', day: '1', section: '1' },
-  { name: '软件工程', week: '1', day: '2', section: '1' },
-  { name: '软件工程', week: '2', day: '3', section: '1' },
-  { name: '操作系统', week: '1', day: '3', section: '3' },
-  { name: '操作系统', week: '1', day: '3', section: '5' }
+  { teacherName: '李莉', name: '数据结构', week: '1', day: '1', section: '0' },
+  { teacherName: '李莉', name: '数据结构', week: '1', day: '1', section: '1' },
+  { teacherName: '李莉', name: '软件工程', week: '1', day: '2', section: '1' },
+  { teacherName: '李莉', name: '软件工程', week: '2', day: '3', section: '1' },
+  { teacherName: '李莉', name: '操作系统', week: '1', day: '3', section: '3' },
+  { teacherName: '李莉', name: '操作系统', week: '1', day: '3', section: '5' }
 ]
 export const listLaboratorys = () => laboratorys

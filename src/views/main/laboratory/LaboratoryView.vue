@@ -232,7 +232,7 @@ watch(
   <el-select v-model="classR" placeholder="Select" style="width: 240px">
     <el-option v-for="item in classes" :key="item.value" :label="item.label" :value="item.value" />
   </el-select>
-  <el-table :data="tableDataR" border style="width: 100%">
+  <el-table :data="tableDataR" border style="width: 100%" :row-style="{ height: '50px' }">
     <el-table-column prop="date" label="" width="180" />
     <el-table-column prop="day1" label="星期一" width="180" />
     <el-table-column prop="day2" label="星期二" width="180" />
@@ -240,6 +240,6 @@ watch(
     <el-table-column prop="day4" label="星期四" width="180" />
     <el-table-column prop="day5" label="星期五" width="180" />
     <el-table-column prop="day6" label="星期六" width="180" />
-    <el-table-column prop="day7" label="星期日" width="180" />
+    <el-table-column prop="day7" label="星期日" width="180" style="height: 100px" />
   </el-table>
 </template>

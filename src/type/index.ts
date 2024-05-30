@@ -22,6 +22,7 @@ export interface Time {
   laboratory?: string
 }
 export interface Laboratory {
+  teacherName: string
   name?: string //实验课名
   week?: string //周次
   day?: string //星期
