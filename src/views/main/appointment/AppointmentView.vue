@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { addService } from '@/serivice'
 import { reactive } from 'vue'
+const centerDialogVisible = ref(false)
 
-// do not use same name with ref
 const form = reactive({
+  clas: '',
   name: '',
   teacherName: '',
   week: '',
@@ -13,23 +14,36 @@ const form = reactive({
 
 const onSubmit = () => {
   addService(form)
+  // centerDialogVisible.value = true
+
   console.log(1, form)
 }
 </script>
 
 <template>
-  <el-form :model="form" label-width="auto" style="max-width: 600px">
+  <el-form
+    :model="form"
+    label-width="auto"
+    style="max-width: 600px; padding-left: 300px; padding-top: 50px">
     <el-form-item label="教师姓名">
       <el-input v-model="form.teacherName" />
     </el-form-item>
     <el-form-item label="实验课程名">
-      <el-select v-model="form.name" placeholder="请选择你的实验课">
+      <el-select v-model="form.name" placeholder="请选择您的实验课">
         <el-option label="数据结构" value="数据结构" />
         <el-option label="软件工程" value="软件工程" />
       </el-select>
     </el-form-item>
+    <el-form-item label="教室">
+      <el-select v-model="form.clas" placeholder="请选择您预约的教室">
+        <el-option label="901" value="1" />
+        <el-option label="902" value="2" />
+        <el-option label="903" value="3" />
+        <el-option label="904" value="4" />
+      </el-select>
+    </el-form-item>
     <el-form-item label="预约周次">
-      <el-select v-model="form.week" placeholder="请选择你想预约的周次">
+      <el-select v-model="form.week" placeholder="请选择您想预约的周次">
         <el-option label="第一周" value="1" />
         <el-option label="第二周" value="2" />
         <el-option label="第三周" value="3" />
@@ -51,7 +65,7 @@ const onSubmit = () => {
       </el-select>
     </el-form-item>
     <el-form-item label="星期">
-      <el-select v-model="form.day" placeholder="请选择你想预约的星期">
+      <el-select v-model="form.day" placeholder="请选择您想预约的星期">
         <el-option label="星期一" value="1" />
         <el-option label="星期二" value="2" />
         <el-option label="星期三" value="3" />
@@ -62,7 +76,7 @@ const onSubmit = () => {
       </el-select>
     </el-form-item>
     <el-form-item label="时间段">
-      <el-select v-model="form.section" placeholder="请选择你想预约的时间段">
+      <el-select v-model="form.section" placeholder="请选择您想预约的时间段">
         <el-option label="12节" value="0" />
         <el-option label="34节" value="1" />
         <el-option label="56节" value="2" />
@@ -70,8 +84,22 @@ const onSubmit = () => {
       </el-select>
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="onSubmit">预约</el-button>
-      <el-button>重置</el-button>
+      <el-button
+        type="primary"
+        @click="onSubmit"
+        style="width: 100%; margin-left: 12px; margin-bottom: 20px">
+        预约
+      </el-button>
+      <el-button style="width: 100%">重置</el-button>
     </el-form-item>
   </el-form>
+  <el-dialog v-model="centerDialogVisible" title="Warning" width="500" center>
+    <span>It should be noted that the content will not be aligned in center by default</span>
+    <template #footer>
+      <div class="dialog-footer">
+        <el-button @click="centerDialogVisible = false">Cancel</el-button>
+        <el-button type="primary" @click="centerDialogVisible = false">Confirm</el-button>
+      </div>
+    </template>
+  </el-dialog>
 </template>

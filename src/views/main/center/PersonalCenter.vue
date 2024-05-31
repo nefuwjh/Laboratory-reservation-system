@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { Iphone, Location, OfficeBuilding, Tickets, User } from '@element-plus/icons-vue'
 import type { ComponentSize } from 'element-plus'
 
@@ -14,7 +14,7 @@ const size = ref<ComponentSize>('default')
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
-            <el-icon >
+            <el-icon>
               <user />
             </el-icon>
             Username

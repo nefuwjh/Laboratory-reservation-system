@@ -27,5 +27,5 @@ export interface Laboratory {
   week?: string //周次
   day?: string //星期
   section?: string //节
-  class?: string //教室
+  clas?: string //教室
 }

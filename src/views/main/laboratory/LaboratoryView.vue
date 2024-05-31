@@ -2,8 +2,8 @@
 import { listLaboratorys } from '@/data'
 import type { Laboratory } from '@/type'
 import { ref } from 'vue'
-const weekR = ref('')
-const classR = ref('')
+const weekR = ref('1')
+const classR = ref('1')
 
 const weeks = [
   {
@@ -95,36 +95,13 @@ const classes = [
   {
     value: '4',
     label: '904'
-  },
-  {
-    value: '5',
-    label: '905'
-  },
-  {
-    value: '6',
-    label: '906'
-  },
-  {
-    value: '7',
-    label: '907'
-  },
-  {
-    value: '8',
-    label: '908'
-  },
-  {
-    value: '9',
-    label: '909'
-  },
-  {
-    value: '10',
-    label: '910'
   }
 ]
 const results = ref<Laboratory[]>([])
 const laboratoryR = ref<Laboratory[]>([])
 
 interface Tabledata {
+  date?: string
   day1?: string
   day2?: string
   day3?: string
@@ -135,50 +112,57 @@ interface Tabledata {
 }
 const tableData: Tabledata[] = [
   {
-    day1: '无',
-    day2: '无',
-    day3: '无',
-    day4: '无',
-    day5: '无',
-    day6: '无',
-    day7: '无'
+    date: '第一二节',
+    day1: '',
+    day2: '',
+    day3: '',
+    day4: '',
+    day5: '',
+    day6: '',
+    day7: ''
   },
   {
-    day1: '无',
-    day2: '无',
-    day3: '无',
-    day4: '无',
-    day5: '无',
-    day6: '无',
-    day7: '无'
+    date: '第三四节',
+    day1: '',
+    day2: '',
+    day3: '',
+    day4: '',
+    day5: '',
+    day6: '',
+    day7: ''
   },
   {
-    day1: '无',
-    day2: '无',
-    day3: '无',
-    day4: '无',
-    day5: '无',
-    day6: '无',
-    day7: '无'
+    date: '第五六节',
+    day1: '',
+    day2: '',
+    day3: '',
+    day4: '',
+    day5: '',
+    day6: '',
+    day7: ''
   },
   {
-    day1: '无',
-    day2: '无',
-    day3: '无',
-    day4: '无',
-    day5: '无',
-    day6: '无',
-    day7: '无'
+    date: '第七八节',
+    day1: '',
+    day2: '',
+    day3: '',
+    day4: '',
+    day5: '',
+    day6: '',
+    day7: ''
   }
 ]
 const tableDataR = ref(tableData)
+const change = { weekR: weekR, classR: classR }
+const changeR = ref(change)
 watch(
-  weekR,
+  changeR,
   async () => {
+    console.log('changeR', changeR.value)
     console.log(2, listLaboratorys())
     results.value = await listLaboratorys()
     laboratoryR.value = results.value.filter((item) => item.week === weekR.value)
-    // laboratoryR.value = results.value.filter((item) => item.class === classR.value)
+    laboratoryR.value = laboratoryR.value.filter((item) => item.clas === classR.value)
     console.log(1, laboratoryR.value)
     // const daysR = ref<Laboratory[]>([])
     // daysR.value = results.value.filter((item) => item.day === '1')
@@ -221,18 +205,22 @@ watch(
     tableDataR.value[3].day6 = section3R.value.find((d) => d.day == '6')?.name
     tableDataR.value[3].day7 = section3R.value.find((d) => d.day == '7')?.name
   },
-  { immediate: true }
+  { immediate: true, deep: true }
 )
 </script>
 
 <template>
-  <el-select v-model="weekR" placeholder="Select" style="width: 240px">
+  <el-select v-model="weekR" placeholder="Select" style="width: 240px" @change="$forceUpdate()">
     <el-option v-for="item in weeks" :key="item.value" :label="item.label" :value="item.value" />
   </el-select>
-  <el-select v-model="classR" placeholder="Select" style="width: 240px">
+  <el-select v-model="classR" placeholder="Select" style="width: 240px; padding: 0 20px">
     <el-option v-for="item in classes" :key="item.value" :label="item.label" :value="item.value" />
   </el-select>
-  <el-table :data="tableDataR" border style="width: 100%" :row-style="{ height: '50px' }">
+  <el-table
+    :data="tableDataR"
+    border
+    style="width: 100%; padding: 30px 0"
+    :row-style="{ height: '50px' }">
     <el-table-column prop="date" label="" width="180" />
     <el-table-column prop="day1" label="星期一" width="180" />
     <el-table-column prop="day2" label="星期二" width="180" />

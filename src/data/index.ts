@@ -20,11 +20,17 @@ const Course: Course[] = [
 ]
 
 export const laboratorys: Laboratory[] = [
-  { teacherName: '李莉', name: '数据结构', week: '1', day: '1', section: '0' },
-  { teacherName: '李莉', name: '数据结构', week: '1', day: '1', section: '1' },
-  { teacherName: '李莉', name: '软件工程', week: '1', day: '2', section: '1' },
-  { teacherName: '李莉', name: '软件工程', week: '2', day: '3', section: '1' },
-  { teacherName: '李莉', name: '操作系统', week: '1', day: '3', section: '3' },
-  { teacherName: '李莉', name: '操作系统', week: '1', day: '3', section: '5' }
+  { teacherName: '李莉', name: '数据结构', week: '1', day: '1', section: '0', clas: '1' },
+  { teacherName: '李莉', name: '数据结构', week: '1', day: '1', section: '1', clas: '1' },
+  { teacherName: '李莉', name: '软件工程', week: '1', day: '2', section: '1', clas: '1' },
+  { teacherName: '李莉', name: '软件工程', week: '2', day: '3', section: '1', clas: '1' },
+  { teacherName: '李莉', name: '操作系统', week: '1', day: '3', section: '3', clas: '1' },
+  { teacherName: '李莉', name: '操作系统', week: '1', day: '5', section: '0', clas: '1' },
+  { teacherName: '李莉', name: '数据结构', week: '2', day: '1', section: '3', clas: '1' },
+  { teacherName: '李莉', name: '数据结构', week: '2', day: '4', section: '1', clas: '1' },
+  { teacherName: '李莉', name: '软件工程', week: '2', day: '4', section: '4', clas: '1' },
+  { teacherName: '李莉', name: '软件工程', week: '2', day: '1', section: '1', clas: '1' },
+  { teacherName: '李莉', name: '计算机网络', week: '4', day: '3', section: '3', clas: '1' },
+  { teacherName: '李莉', name: '计算机网络', week: '1', day: '4', section: '1', clas: '1' }
 ]
 export const listLaboratorys = () => laboratorys
