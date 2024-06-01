@@ -13,7 +13,7 @@
 
 <style>
 * {
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 .my-row {
   margin: 5px 5px 10px 5px;

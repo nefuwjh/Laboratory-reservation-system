@@ -23,7 +23,7 @@ const onSubmit = () => {
     label-position="left"
     :model="form"
     label-width="120px"
-    style="max-width: 600px; padding-left: 400px; padding-top: 50px">
+    style="max-width: 600px; padding-left: 100px; padding-top: 50px">
     <el-form-item label="教师姓名">
       <el-input v-model="form.teacherName" />
     </el-form-item>
@@ -93,6 +93,6 @@ const onSubmit = () => {
 </template>
 <style>
 .el-form-item__label {
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 </style>
