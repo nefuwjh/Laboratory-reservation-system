@@ -79,13 +79,13 @@ const loginF = () => {
   background-color: #06c6bf;
 }
 .container {
-  width: 480px;
+  width: 580px;
   height: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #00000090;
+  background: #27272f90;
   text-align: center;
   border-radius: 20px;
   margin-top: 10px;
