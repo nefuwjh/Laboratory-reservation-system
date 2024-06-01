@@ -10,7 +10,8 @@ export interface User {
   course?: Array<Course>
 }
 export interface Course {
-  name?: string
+  id?: string
+  name: string
   teacher?: string
   period?: number
   time?: Array<Time>

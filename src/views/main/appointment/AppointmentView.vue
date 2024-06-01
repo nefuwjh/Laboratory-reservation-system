@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { addService } from '@/serivice'
 import { reactive } from 'vue'
-const centerDialogVisible = ref(false)
+import { addService } from '@/serivice'
+import { courses } from '@/data'
 
 const form = reactive({
   clas: '',
@@ -14,24 +14,22 @@ const form = reactive({
 
 const onSubmit = () => {
   addService(form)
-  // centerDialogVisible.value = true
-
   console.log(1, form)
 }
 </script>
 
 <template>
   <el-form
+    label-position="left"
     :model="form"
-    label-width="auto"
-    style="max-width: 600px; padding-left: 300px; padding-top: 50px">
+    label-width="120px"
+    style="max-width: 600px; padding-left: 400px; padding-top: 50px">
     <el-form-item label="教师姓名">
       <el-input v-model="form.teacherName" />
     </el-form-item>
     <el-form-item label="实验课程名">
       <el-select v-model="form.name" placeholder="请选择您的实验课">
-        <el-option label="数据结构" value="数据结构" />
-        <el-option label="软件工程" value="软件工程" />
+        <el-option v-for="item in courses" :key="item.id" :label="item.name" :value="item.name" />
       </el-select>
     </el-form-item>
     <el-form-item label="教室">
@@ -87,19 +85,14 @@ const onSubmit = () => {
       <el-button
         type="primary"
         @click="onSubmit"
-        style="width: 100%; margin-left: 12px; margin-bottom: 20px">
+        style="width: 100%; margin-bottom: 20px; margin-top: 30px">
         预约
       </el-button>
-      <el-button style="width: 100%">重置</el-button>
     </el-form-item>
   </el-form>
-  <el-dialog v-model="centerDialogVisible" title="Warning" width="500" center>
-    <span>It should be noted that the content will not be aligned in center by default</span>
-    <template #footer>
-      <div class="dialog-footer">
-        <el-button @click="centerDialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="centerDialogVisible = false">Confirm</el-button>
-      </div>
-    </template>
-  </el-dialog>
 </template>
+<style>
+.el-form-item__label {
+  font-size: 20px;
+}
+</style>

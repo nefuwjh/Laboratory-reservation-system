@@ -1,26 +1,23 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Iphone, Location, OfficeBuilding, Tickets, User } from '@element-plus/icons-vue'
+import { Iphone, Location, Tickets, User } from '@element-plus/icons-vue'
 import type { ComponentSize } from 'element-plus'
 
-const size = ref<ComponentSize>('default')
+const size = ref<ComponentSize>('large')
 </script>
 <template>
   <div>
-    <el-descriptions class="margin-top" title="Personal Center" :column="3" :size="size" border>
-      <template #extra>
-        <el-button type="primary">Operation</el-button>
-      </template>
+    <el-descriptions class="margin-top" title="个人中心" :column="2" :size="size" border>
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
             <el-icon>
               <user />
             </el-icon>
-            Username
+            用户名
           </div>
         </template>
-        kooriookami
+        李莉
       </el-descriptions-item>
       <el-descriptions-item>
         <template #label>
@@ -28,7 +25,7 @@ const size = ref<ComponentSize>('default')
             <el-icon>
               <iphone />
             </el-icon>
-            Telephone
+            电话号码
           </div>
         </template>
         18100000000
@@ -39,10 +36,10 @@ const size = ref<ComponentSize>('default')
             <el-icon>
               <location />
             </el-icon>
-            Place
+            办公室
           </div>
         </template>
-        Suzhou
+        成栋1001
       </el-descriptions-item>
       <el-descriptions-item>
         <template #label>
@@ -50,26 +47,26 @@ const size = ref<ComponentSize>('default')
             <el-icon>
               <tickets />
             </el-icon>
-            Remarks
+            学院
           </div>
         </template>
-        <el-tag size="small">School</el-tag>
+        计算机与控制工程学院
       </el-descriptions-item>
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
             <el-icon>
-              <office-building />
+              <tickets />
             </el-icon>
-            Address
+            专业
           </div>
         </template>
-        No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu Province
+        软件工程
       </el-descriptions-item>
     </el-descriptions>
   </div>
 </template>
-<style scoped>
+<style>
 .el-descriptions {
   margin-top: 20px;
 }
@@ -79,5 +76,8 @@ const size = ref<ComponentSize>('default')
 }
 .margin-top {
   margin-top: 20px;
+}
+.el-descriptions-item {
+  font-size: 20px;
 }
 </style>

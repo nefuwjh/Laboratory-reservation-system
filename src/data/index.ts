@@ -11,12 +11,12 @@ const User: User = {
   password: '1001'
 }
 
-const Course: Course[] = [
-  { name: '软件工程', teacher: 'LiLi', time: [], period: 40 },
-  { name: '操作系统', teacher: 'LiLi', time: [], period: 40 },
-  { name: '计算机网络', teacher: 'LiLi', time: [], period: 40 },
-  { name: '计算机组成原理', teacher: 'LiLi', time: [], period: 40 },
-  { name: '数据结构', teacher: 'LiLi', time: [], period: 40 }
+export const courses: Course[] = [
+  { id: '202401', name: '软件工程', teacher: '李莉', time: [], period: 40 },
+  { id: '202402', name: '操作系统', teacher: '李莉', time: [], period: 40 },
+  { id: '202403', name: '计算机网络', teacher: '李莉', time: [], period: 40 },
+  { id: '202404', name: '计算机组成原理', teacher: '李莉', time: [], period: 40 },
+  { id: '202405', name: '数据结构', teacher: '李莉', time: [], period: 40 }
 ]
 
 export const laboratorys: Laboratory[] = [

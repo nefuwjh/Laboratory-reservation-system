@@ -13,7 +13,7 @@
 
 <style>
 * {
-  font-size: large;
+  font-size: 20px;
 }
 .my-row {
   margin: 5px 5px 10px 5px;
@@ -26,7 +26,6 @@
 }
 .my-col {
   margin-bottom: 10px;
-  /* border: 1px solid red; */
 }
 a {
   color: black;
