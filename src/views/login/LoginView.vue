@@ -20,7 +20,7 @@ const loginF = () => {
         const load = createElLoading()
         setTimeout(() => {
           load.close()
-          router.push('/main')
+          router.push('/main/center/PersonalCenter')
           ElMessage({ type: 'success', message: '登录成功' })
         }, 1500)
       }
